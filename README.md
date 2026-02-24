@@ -1,2 +1,16 @@
 # omija-tea-spring-mini-project
 스프링 프로젝트
+
+## 26-03-02
+- Spring Boot로 시작해도 어차피 Spring 다 핥을 수 있을 것 같아서 spring boot로 시작함
+- kotlin 보다 일단 java 로 시작해야 다 배울 수 있을듯 해서 java로 정함
+
+### 프로젝트 생성
+
+intellij 에서 start.spring.io로 프로젝트 생성했음!
+
+- JAVA는 .python-version 같은거라 `이 환경에서 돌려야됨!` 을 결정하는거고, JDK 는 실제 이거 내 로컬에서 빌드할때 뭘로 할거냐! 임. 근데 이거 맞춰주는게 웬만하면 좀 나은듯. 25 환경에서 21 spec 프로젝트 돌리는것도 되긴 되지만 굳이? Toolchain레벨에서 자꾸 막힘
+- lombok, spring-web 설치하고 시작함
+- DB관련은 spring-data-jpa 랑 postgresql driver 설치하고 했음!
+- spring-web 의존성 추가하면 내장 tomcat이 포함되어 있음! 얘도 자바로 만들어져 있어서 알아서 켜준다고 한다
+- java 벤더는 그냥 eclipse-temurin을 쓰는게 대중픽이라고 한다
