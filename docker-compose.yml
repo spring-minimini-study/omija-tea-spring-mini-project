@@ -1,0 +1,15 @@
+services:
+  db:
+    image: postgres:18
+    container_name: db_spring
+    environment:
+      POSTGRES_USER: ${DB_USER}
+      POSTGRES_PASSWORD: ${DB_PASSWORD}
+      POSTGRES_DB:  ${DB_NAME}
+    ports:
+      - "${DB_PORT}:${DB_PORT}"
+    volumes:
+      - volume_db_spring:/var/lib/postgresql
+
+volumes:
+  volume_db_spring:
