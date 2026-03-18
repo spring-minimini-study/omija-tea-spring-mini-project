@@ -14,6 +14,6 @@
 - DTO에도 어노테이션 다는것이 가능하다! pydantic Field처럼!
     - @Schema(description = "사용자 id", example = "omija")이런식으루
 
-[image](./attachment/img1_swagger.png)
+![image](./attachment/img1_swagger.png)
 
 - 기본 url 은 /swagger-ui/index.html/이다.
