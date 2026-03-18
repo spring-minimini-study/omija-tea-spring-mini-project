@@ -1,10 +1,12 @@
 package com.omija.miniproject.domain.member;
 
+import io.swagger.v3.oas.annotations.tags.Tag;
 import lombok.*;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
+@Tag(name= "Member", description="유저 관리 API")
 @RestController
 @RequiredArgsConstructor
 @RequestMapping("/member")

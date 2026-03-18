@@ -14,6 +14,11 @@ spring:
     password: ${DB_PASSWORD}
 
   jpa:
+
     show-sql: false
     hibernate:
       ddl-auto: update # 나중에는 제대로 버전 관리 공부해보자
+
+  mvc:
+    pathmatch:
+      matching-strategy: ant_path_matcher
