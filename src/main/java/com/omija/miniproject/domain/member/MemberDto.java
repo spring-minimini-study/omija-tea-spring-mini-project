@@ -9,22 +9,22 @@ public class MemberDto {
     @NoArgsConstructor
     @AllArgsConstructor
     public static class CreateMemberRequest {
-        private String userId;
+        private String memberId;
         private String name;
 
         public Member toEntity() {
-            return Member.builder().userId(this.userId).name(this.name).build();
+            return Member.builder().memberId(this.memberId).name(this.name).build();
         }
     }
 
     @Getter
     @AllArgsConstructor
     public static class MemberInfo {
-        private String userId;
+        private String memberId;
         private String name;
 
         public MemberInfo(Member member) {
-            this.userId = member.getUserId();
+            this.memberId = member.getMemberId();
             this.name = member.getName();
         }
     }
@@ -33,12 +33,12 @@ public class MemberDto {
     @AllArgsConstructor
     public static class AdminMemberInfo {
         private Long id;
-        private String userId;
+        private String memberId;
         private String name;
 
         public AdminMemberInfo(Member member) {
             this.id = member.getId();
-            this.userId = member.getUserId();
+            this.memberId = member.getMemberId();
             this.name = member.getName();
         }
     }
