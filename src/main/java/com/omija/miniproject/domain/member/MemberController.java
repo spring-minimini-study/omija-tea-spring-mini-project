@@ -30,7 +30,7 @@ class MemberController {
     )
     @GetMapping("/{memberId}")
     public ResponseEntity<MemberDto.MemberInfo> getMember(@PathVariable String memberId) {
-        MemberDto.MemberInfo member = memberService.getMemberInfoByMemberId(memberId);
+        MemberDto.MemberInfo member = memberService.getMemberInfoByLoginId(memberId);
 
         return ResponseEntity.ok(member);
     }

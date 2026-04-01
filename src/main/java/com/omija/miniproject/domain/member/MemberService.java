@@ -20,8 +20,8 @@ public class MemberService {
         return new MemberDto.MemberInfo(dbMember);
     }
 
-    public MemberDto.MemberInfo getMemberInfoByMemberId(String userId) {
-        Member member = memberRepository.findByMemberId(userId).orElseThrow(() -> new IllegalArgumentException("user not exist"));
+    public MemberDto.MemberInfo getMemberInfoByLoginId(String userId) {
+        Member member = memberRepository.findByLoginId(userId).orElseThrow(() -> new IllegalArgumentException("user not exist"));
         return new MemberDto.MemberInfo(member);
     }
 

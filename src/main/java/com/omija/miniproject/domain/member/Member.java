@@ -6,8 +6,8 @@ import com.omija.miniproject.domain.post.Post;
 import jakarta.persistence.*;
 import lombok.*;
 
-import java.util.ArrayList;
-import java.util.List;
+import java.util.*;
+
 
 @Entity
 @Getter
@@ -19,7 +19,11 @@ public class Member extends CreatedAt {
     private Long id;
 
     @Column(unique=true, nullable=false)
-    private String memberId;
+    private String loginId;
+
+    @Enumerated(EnumType.STRING)
+    @Column(columnDefinition ="gender_enum")
+    private MemberGender gender;
 
     @Column(nullable=false)
     private String name;
@@ -48,8 +52,8 @@ public class Member extends CreatedAt {
     }
 
     @Builder
-    public Member(String memberId, String name){
-        this.memberId = memberId;
+    public Member(String loginId, String name){
+        this.loginId = loginId;
         this.name = name;
     }
 }

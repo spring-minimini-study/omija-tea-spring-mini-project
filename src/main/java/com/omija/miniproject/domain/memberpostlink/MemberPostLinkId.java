@@ -7,7 +7,7 @@ import java.util.*;
 @Embeddable
 public class MemberPostLinkId {
     @Column(name = "member_id")
-    private Integer memberId;
+    private Long memberId;
 
     @Column(name = "post_id")
     private String postId;

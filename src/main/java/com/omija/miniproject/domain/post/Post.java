@@ -1,5 +1,6 @@
 package com.omija.miniproject.domain.post;
 
+import com.omija.miniproject.common.entity.CreatedAt;
 import com.omija.miniproject.domain.memberpostlink.MemberPostLink;
 import jakarta.persistence.*;
 import lombok.*;
@@ -10,7 +11,7 @@ import java.util.*;
 @Table(name = "post")
 @Getter
 @NoArgsConstructor(access = AccessLevel.PROTECTED)
-public class Post {
+public class Post extends CreatedAt {
     @Id
     private String id;
 
@@ -22,9 +23,9 @@ public class Post {
             cascade = CascadeType.ALL,
             orphanRemoval = true
     )
-    private List<MemberPostLink> userPostLinks = new ArrayList<>();
+    private List<MemberPostLink> memberPostLinks = new ArrayList<>();
 
     public int getUserLinkCount() {
-        return userPostLinks.size();
+        return memberPostLinks.size();
     }
 }
