@@ -8,7 +8,6 @@ import java.util.*;
 
 public interface MemberPostLinkRepository extends JpaRepository<MemberPostLink, MemberPostLinkId> {
     @Query("SELECT l.post FROM MemberPostLink l " +
-            "JOIN FETCH l.post " +
             "WHERE l.member.id = :memberId")
     List<Post> findAllPostsByMemberId(@Param("memberId") Long memberId);
 }
