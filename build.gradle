@@ -1,7 +1,6 @@
 plugins {
     id 'java'
     id 'org.springframework.boot' version '4.0.3'
-    id 'io.spring.dependency-management' version '1.1.7'
 }
 
 group = 'com.omija'
@@ -22,21 +21,20 @@ configurations {
 
 repositories {
     mavenCentral()
-    maven { url 'https://repo.spring.io/milestone' }
-    maven { url 'https://repo.spring.io/snapshot' }
+    maven { url = 'https://repo.spring.io/milestone' }
+    maven { url = 'https://repo.spring.io/snapshot' }
     maven {
         name = 'Central Portal Snapshots'
         url = 'https://central.sonatype.com/repository/maven-snapshots/'
     }
 }
 
-dependencyManagement {
-    imports {
-        mavenBom 'org.springframework.ai:spring-ai-bom:2.0.0-SNAPSHOT'
-    }
-}
 
 dependencies {
+    // https://docs.spring.io/spring-boot/gradle-plugin/managing-dependencies.html#managing-dependencies.gradle-bom-support
+    implementation platform(org.springframework.boot.gradle.plugin.SpringBootPlugin.BOM_COORDINATES)
+    annotationProcessor platform(org.springframework.boot.gradle.plugin.SpringBootPlugin.BOM_COORDINATES)
+    implementation platform('org.springframework.ai:spring-ai-bom:2.0.0-SNAPSHOT')
     implementation 'org.springframework.boot:spring-boot-starter-data-jpa'
     implementation 'org.springframework.boot:spring-boot-starter-web'
     implementation 'org.springdoc:springdoc-openapi-starter-webmvc-ui:3.0.2'
